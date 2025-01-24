@@ -2,6 +2,11 @@
   @for (message of messages(); track message) {
     <li>{{ message }}</li>
   }
+
+  <!-- triggering change detection via async pipe
+  @for (message of messages$ | async; track message) {
+    <li>{{ message }}</li>
+  } -->
 </ul>
 
 <p class="debug-output">{{ debugOutput }}</p>

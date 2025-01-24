@@ -1,9 +1,12 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inject, OnInit, signal } from '@angular/core';
 import { MessagesService } from '../messages.service';
+//import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-messages-list',
   standalone: true,
+  // triggering change detection via async pipe:
+  // imports: [AsyncPipe],
   templateUrl: './messages-list.component.html',
   styleUrl: './messages-list.component.css',
   //onPush strategy (if event or change input value occured inside this (or childs) component, run change detection mechanism):
@@ -31,6 +34,10 @@ export class MessagesListComponent implements OnInit {
       subscription.unsubscribe();
     });
   }
+  ///////////////
+
+  /////////////// shorter alternative for example ^ via pipe:
+  messages$ = this.messagesService.allMessages;
   ///////////////
 
   get debugOutput() {
