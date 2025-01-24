@@ -2,6 +2,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, DestroyRef, inje
 import { MessagesService } from '../messages.service';
 //import { AsyncPipe } from '@angular/common';
 
+// triggering change detection mechanism is unnecessary when using signals // 
+
 @Component({
   selector: 'app-messages-list',
   standalone: true,
